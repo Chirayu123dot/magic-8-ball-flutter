@@ -26,16 +26,14 @@ class _MagicBallState extends State<MagicBall> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: TextButton(
-            child: Image.asset('images/ball$ballNumber.png'),
-            onPressed: () {
-              changeBallImage();
-            },
-          ),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: TextButton(
+          child: Image.asset('images/ball$ballNumber.png'),
+          onPressed: () {
+            changeBallImage();
+          },
         ),
       ),
     );
