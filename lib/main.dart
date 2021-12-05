@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(
       MaterialApp(
@@ -29,9 +30,21 @@ class _MagicBallState extends State<MagicBall> {
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Image.asset('images/ball1.png'),
+          child: TextButton(
+            child: Image.asset('images/ball$ballNumber.png'),
+            onPressed: () {
+              changeBallImage();
+            },
+          ),
         ),
       ),
     );
+  }
+
+  /// The function randomly changes the ball image
+  void changeBallImage() {
+    setState(() {
+      ballNumber = Random().nextInt(5) + 1;
+    });
   }
 }
